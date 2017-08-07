@@ -1,0 +1,22 @@
+This program determines the Greatest Common Factor of two integers.
+
+int1 = int(input("Give me a number: "))
+int2 = int(input("Give me a number: "))
+
+int1_factors = []
+for i in range(1, int1):
+    if int1 % i == 0:
+        int1_factors.append(i)
+
+int2_factors = []
+for j in range(1, int2):
+    if int2 % j == 0:
+        int2_factors.append(j)
+
+shared_factors = []
+for k in int1_factors:
+    for l in int2_factors:
+        if k == l:
+            shared_factors.append(k)
+
+print(max(shared_factors))

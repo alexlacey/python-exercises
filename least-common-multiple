@@ -1,0 +1,24 @@
+# This program determines the Least Common Multiple of two integers.
+
+int1 = int(input("Give me a number: "))
+int2 = int(input("Give me a number: "))
+
+primary_multiple = int1 * int2
+
+int1_multiples = []
+for i in range(int1, primary_multiple + 1):
+    if i % int1 == 0:
+        int1_multiples.append(i)
+
+int2_multiples = []
+for j in range(int2, primary_multiple + 1):
+    if j % int2 == 0:
+        int2_multiples.append(j)
+
+shared_multiples = []
+for k in int1_multiples:
+    for l in int2_multiples:
+        if k == l:
+            shared_multiples.append(k)
+
+print(min(shared_multiples))
